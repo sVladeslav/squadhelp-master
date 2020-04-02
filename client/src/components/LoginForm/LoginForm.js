@@ -21,11 +21,11 @@ class LoginForm extends React.Component {
     };
 
     classNameStyle = {
-        container: styles.inputContainer,
-        input: styles.input,
-        warning: styles.fieldWarning,
-        notValid: styles.notValid,
-        valid: styles.valid
+        classInputStyle: styles.input,
+        classNotValid:  styles.notValid,
+        classValid:  styles.valid,
+        classInputContainer: styles.inputContainer,
+        classWarningForContainer: styles.fieldWarning,
     };
 
     render() {
@@ -36,14 +36,14 @@ class LoginForm extends React.Component {
                     {error && <Error data={error.data} status={error.status} clearError={authClear}/>}
                     <Field
                         name='email'
-                        classes={this.classNameStyle}
+                        {...this.classNameStyle}
                         component={FormInput}
                         type='text'
                         label='Email Address'
                     />
                     <Field
                         name='password'
-                        classes={this.classNameStyle}
+                        {...this.classNameStyle}
                         component={FormInput}
                         type='password'
                         label='password'

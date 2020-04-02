@@ -2,18 +2,21 @@ import React from 'react';
 import classNames from 'classnames';
 
 const FormInput = (props) => {
-    const {label, input, type, classes, meta: {touched, error}} = props;
+    const {label, input, type, classInputStyle,
+        classNotValid,classValid,
+        classInputContainer,classWarningForContainer,
+        meta: {touched, error}} = props;
 
-    const classInput = classNames(classes.input,
-            {[classes.notValid]: touched && error,
-            [classes.valid]: touched && !error }
+    const classInput = classNames(classInputStyle,
+            {[classNotValid]: touched && error,
+            [classValid]: touched && !error }
         );
 
     return (
-        <div className={classes.container}>
+        <div className={classInputContainer}>
             <input {...input} placeholder={label} type={type}
                    className={classInput}/>
-            {classes.warning && (touched && (error && <span className={classes.warning}>{error}</span>))}
+            {classWarningForContainer && (touched && (error && <span className={classWarningForContainer}>{error}</span>))}
         </div>
     )
 };

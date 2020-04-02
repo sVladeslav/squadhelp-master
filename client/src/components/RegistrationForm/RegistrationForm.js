@@ -32,11 +32,11 @@ class RegistrationForm extends React.Component {
     };
 
     classNameStyle = {
-        container: styles.inputContainer,
-        input: styles.input,
-        warning: styles.fieldWarning,
-        notValid: styles.notValid,
-        valid: styles.valid
+        classInputStyle: styles.input,
+        classNotValid:  styles.notValid,
+        classValid:  styles.valid,
+        classInputContainer:styles.inputContainer,
+        classWarningForContainer: styles.fieldWarning,
     };
 
     render() {
@@ -50,14 +50,14 @@ class RegistrationForm extends React.Component {
         <div className={styles.row}>
                         <Field
                             name='firstName'
-                            classes={this.classNameStyle}
+                            {...this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='First name'
                         />
                         <Field
                             name='lastName'
-                            classes={this.classNameStyle}
+                            {...this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='Last name'
@@ -66,14 +66,14 @@ class RegistrationForm extends React.Component {
                     <div className={styles.row}>
                         <Field
                             name='displayName'
-                            classes={this.classNameStyle}
+                            {...this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='Display Name'
                         />
                         <Field
                             name='email'
-                            classes={this.classNameStyle}
+                            {...this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='Email Address'
@@ -82,14 +82,14 @@ class RegistrationForm extends React.Component {
                     <div className={styles.row}>
                         <Field
                             name='password'
-                            classes={this.classNameStyle}
+                            {...this.classNameStyle}
                             component={FormInput}
                             type='password'
                             label='Password'
                         />
                         <Field
                             name='confirmPassword'
-                            classes={this.classNameStyle}
+                            {...this.classNameStyle}
                             component={FormInput}
                             type='password'
                             label='Password confirmation'
