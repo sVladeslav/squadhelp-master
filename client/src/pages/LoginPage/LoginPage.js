@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {connect} from 'react-redux';
 import {clearErrorSignUpAndLogin} from '../../actions/actionCreator';
 import CONSTANTS from '../../constants';
+import Error from "../../components/Error/Error";
 
 const LoginPage = (props) => {
 
@@ -18,7 +19,10 @@ const LoginPage = (props) => {
                     </div>
                 </div>
                 <div className={styles.loginFormContainer}>
-                    <LoginForm/>
+                    <div className={styles.loginForm}>
+                        <h2>LOGIN TO YOUR ACCOUNT</h2>
+                        <LoginForm/>
+                    </div>
                 </div>
             </div>
         </div>
