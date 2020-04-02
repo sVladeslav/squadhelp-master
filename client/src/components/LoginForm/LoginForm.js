@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
         this.props.authClear();
     }
 
-    clicked = (values) => {
+    loginRequest = (values) => {
         this.props.loginRequest(values);
     };
 
@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
         const {error, isFetching} = this.props.auth;
         const {handleSubmit, submitting, authClear} = this.props;
         return (
-                <form onSubmit={handleSubmit(this.clicked)}>
+                <form onSubmit={handleSubmit(this.loginRequest)}>
                     {error && <Error data={error.data} status={error.status} clearError={authClear}/>}
                     <Field
                         name='email'
