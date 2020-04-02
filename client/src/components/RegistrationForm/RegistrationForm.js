@@ -31,6 +31,13 @@ class RegistrationForm extends React.Component {
         });
     };
 
+    classNameStyle = {
+        container: styles.inputContainer,
+        input: styles.input,
+        warning: styles.fieldWarning,
+        notValid: styles.notValid,
+        valid: styles.valid
+    };
 
     render() {
         const {handleSubmit, submitting, auth, authClear} = this.props;
@@ -50,24 +57,14 @@ class RegistrationForm extends React.Component {
                     <div className={styles.row}>
                         <Field
                             name='firstName'
-                            classes={{
-                                container: styles.inputContainer,
-                                input: styles.input,
-                                warning: styles.fieldWarning,
-                                notValid: styles.notValid
-                            }}
+                            classes={this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='First name'
                         />
                         <Field
                             name='lastName'
-                            classes={{
-                                container: styles.inputContainer,
-                                input: styles.input,
-                                warning: styles.fieldWarning,
-                                notValid: styles.notValid
-                            }}
+                            classes={this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='Last name'
@@ -76,24 +73,14 @@ class RegistrationForm extends React.Component {
                     <div className={styles.row}>
                         <Field
                             name='displayName'
-                            classes={{
-                                container: styles.inputContainer,
-                                input: styles.input,
-                                warning: styles.fieldWarning,
-                                notValid: styles.notValid
-                            }}
+                            classes={this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='Display Name'
                         />
                         <Field
                             name='email'
-                            classes={{
-                                container: styles.inputContainer,
-                                input: styles.input,
-                                warning: styles.fieldWarning,
-                                notValid: styles.notValid
-                            }}
+                            classes={this.classNameStyle}
                             component={FormInput}
                             type='text'
                             label='Email Address'
@@ -102,24 +89,14 @@ class RegistrationForm extends React.Component {
                     <div className={styles.row}>
                         <Field
                             name='password'
-                            classes={{
-                                container: styles.inputContainer,
-                                input: styles.input,
-                                warning: styles.fieldWarning,
-                                notValid: styles.notValid
-                            }}
+                            classes={this.classNameStyle}
                             component={FormInput}
                             type='password'
                             label='Password'
                         />
                         <Field
                             name='confirmPassword'
-                            classes={{
-                                container: styles.inputContainer,
-                                input: styles.input,
-                                warning: styles.fieldWarning,
-                                notValid: styles.notValid
-                            }}
+                            classes={this.classNameStyle}
                             component={FormInput}
                             type='password'
                             label='Password confirmation'
