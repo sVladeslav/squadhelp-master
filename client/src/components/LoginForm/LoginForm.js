@@ -29,11 +29,10 @@ class LoginForm extends React.Component {
     };
 
     render() {
-        const {error, isFetching} = this.props.auth;
+        const { isFetching} = this.props.auth;
         const {handleSubmit, submitting, authClear} = this.props;
         return (
                 <form onSubmit={handleSubmit(this.loginRequest)}>
-                    {error && <Error data={error.data} status={error.status} clearError={authClear}/>}
                     <Field
                         name='email'
                         {...this.classNameStyle}
@@ -60,6 +59,7 @@ const mapStateToProps = (state) => {
     const {auth} = state;
     return {auth};
 };
+
 
 const mapDispatchToProps = (dispatch) => (
     {
