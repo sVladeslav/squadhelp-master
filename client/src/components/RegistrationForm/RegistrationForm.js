@@ -16,9 +16,7 @@ import Schems from '../../validators/validationSchems';
 class RegistrationForm extends React.Component {
 
 
-    componentWillUnmount() {
-        this.props.authClear();
-    }
+
 
     registrationUser = (values) => {
         this.props.register({
@@ -40,12 +38,10 @@ class RegistrationForm extends React.Component {
     };
 
     render() {
-        const {handleSubmit, submitting, auth, authClear} = this.props;
-        const {error} = auth;
+        const {handleSubmit, submitting} = this.props;
         return (
 
                 <form onSubmit={handleSubmit(this.registrationUser)}>
-        {error && <Error data={error.data} status={error.status} clearError={authClear}/>}
 
         <div className={styles.row}>
                         <Field
@@ -124,25 +120,14 @@ class RegistrationForm extends React.Component {
     }
 }
 
-
-const mapStateToProps = (state) => {
-    return {
-        auth: state.auth,
-        initialValues: {
-            role: CONSTANTS.CUSTOMER
-        }
-    }
-};
-
 const mapDispatchToProps = (dispatch) => (
     {
         register: (data) => dispatch(authActionRegister(data)),
-        authClear: () => dispatch(clearAuth())
     }
 );
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
+export default connect(null, mapDispatchToProps)(reduxForm({
     form: 'login',
     validate: customValidator(Schems.RegistrationSchem)
 })(RegistrationForm));
