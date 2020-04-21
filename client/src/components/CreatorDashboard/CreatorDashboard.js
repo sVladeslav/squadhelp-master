@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {
     getContestsForCreative,
@@ -185,6 +185,7 @@ class CreatorDashboard extends React.Component {
                                 <option value='asc'>Ascending</option>
                             </select>
                         </div>
+                        <Link to={"transaction"} className = {classNames(styles.delLinkStyle, styles.myEntries)} >Transaction History</Link>
                     </div>
                 </div>
                 {

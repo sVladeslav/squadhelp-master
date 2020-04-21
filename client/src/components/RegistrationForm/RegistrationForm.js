@@ -19,6 +19,7 @@ class RegistrationForm extends React.Component {
 
 
     registrationUser = (values) => {
+          
         this.props.register({
             firstName: values.firstName,
             lastName: values.lastName,
