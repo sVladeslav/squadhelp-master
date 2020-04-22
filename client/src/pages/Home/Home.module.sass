@@ -411,3 +411,31 @@
     background-color: #28D2D1
 
 
+.startContestBlock
+  color: white
+  font-family: "Poppins",Helvetica,Arial,sans-serif
+  font-size: 16px
+  font-weight: 400
+  background: linear-gradient(135deg, #377dff, #2d1582)
+  display: flex
+  justify-content: space-between
+  padding: 24px
+  width: 85%
+  max-width: 1200px
+  & > *
+    padding: 15px
+  .buttonStartContest
+    background: white
+    color: #1e2022
+    font-weight: 500
+    line-height: 1.5
+    padding: 12px 16px
+    text-align: center
+    min-width: 20%
+    & > p
+      word-wrap: break-word
+      vertical-align: middle
+      margin: 0
+  @media screen and (max-width : 575px)
+    flex-direction: column
+    align-items: center
